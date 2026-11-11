@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine
+FROM golang:alpine
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 RUN go install github.com/air-verse/air@latest
 
 # Copy go.mod and go.sum first to leverage Docker layer caching
-COPY go.mod go.sum ./
+COPY go.mod go.sum* ./
 RUN go mod download
 
 # Copy the rest of the source code
