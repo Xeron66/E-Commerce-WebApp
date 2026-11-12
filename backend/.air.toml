@@ -2,6 +2,8 @@ root = "."
 tmp_dir = "tmp"
 
 [build]
+  poll = true
+  poll_interval = 500
   # This points to your new main.go location
   cmd = "go build -o ./tmp/main ./cmd/api/main.go"
   
